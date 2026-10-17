@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Persona Favorita ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente romántica de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo de corazones flotantes -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1 class="title">Para el amor de mi vida ❤️</h1>
+            <p class="subtitle">Cada segundo a tu lado es mi momento favorito</p>
+        </header>
+
+        <!-- Contador de tiempo -->
+        <section class="card counter-card">
+            <h2>Llevamos juntos:</h2>
+            <p id="start-date-text" class="start-date-text"></p>
+            
+            <div id="timer" class="timer-display">
+                <div class="time-box"><span id="days">0</span><small>Días</small></div>
+                <div class="time-box"><span id="hours">0</span><small>Horas</small></div>
+                <div class="time-box"><span id="minutes">0</span><small>Min</small></div>
+                <div class="time-box"><span id="seconds">0</span><small>Seg</small></div>
+            </div>
+
+            <!-- Nota o frase especial debajo del reloj -->
+            <div class="clock-note">
+                <p>✨ "Y cada uno de estos segundos ha valído completamente la pena, no es la fecha en
+                    en la que emepezamos una relacion, es la fecha en la que me enamore de ti y desperte mis,
+                    sentimientos por ti." ✨</p>
+            </div>
+        </section>
+
+        <!-- Carta sorpresa -->
+        <section class="card letter-card">
+            <button id="toggle-letter-btn" class="btn">✨ Abrir mi carta para ti ✨</button>
+            <div id="letter-content" class="letter-content hidden">
+                <p>
+                    Hola mi flaquita,<br><br>
+                    Quería crear algo único para recordarte lo especial que eres para mí. 
+                    Gracias por cada risa, por cada abrazo y por iluminar mis días. 
+                    Esta pequeña creacion es solo una demostración de todo lo que siento por ti.<br><br>
+                    ¡Te amo con todo mi corazón con cariño tu flaco!  💕
+                </p>
+            </div>
+        </section>
+
+        <!-- Enlace a la sección independiente de cartas -->
+<section class="card">
+    <h2>Cartas Especiales 💌</h2>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+        Tengo sorpresas escritas para diferentes momentos...
+    </p>
+    <a href="carta_Kami.html" class="btn" style="text-decoration: none; display: inline-block;">
+        Abrir Cartas "Abre cuando..." ✉️
+    </a>
+</section>
+
+       <!-- Sección de Recuerdos / Galería -->
+        <section class="card gallery-card">
+            <h2>Nuestros Momentos Especiales 📸</h2>
+
+            <!-- Botón para subir fotos desde la galería del teléfono -->
+            <div style="margin-bottom: 15px;">
+                <label for="image-input" class="btn" style="cursor: pointer; display: inline-block; font-size: 0.9rem;">
+                    ➕ Agregar foto desde mi galería
+                </label>
+                <input type="file" id="image-input" accept="image/*" onchange="handleImage(this)" style="display: none;">
+            </div>
+
+            <div class="gallery" id="gallery-container">
+                <!-- ========================================== -->
+                <!-- LAS 6 FOTOS FIJAS (Oficiales del Repositorio) -->
+                <!-- ========================================== -->
+                <div class="photo-card fixed-photo">
+                    <img src="assets/1.jpeg" alt="Foto fija 1">
+                    <p>Nuestro primer pacto de amor 🥰</p>
+                </div>
+                <div class="photo-card fixed-photo">
+                    <img src="assets/2.jpeg" alt="Foto fija 2">
+                    <p>El grado de mi novia, me hiciste sentir mucho orgullo 💕</p>
+                </div>
+                <div class="photo-card fixed-photo">
+                    <img src="assets/3.jpeg" alt="Foto fija 3">
+                    <p>Nuestra primera salida de luces y primer dia hacer oficial nuestra relacion ✨</p>
+                </div>
+                <div class="photo-card fixed-photo">
+                    <img src="assets/4.jpeg" alt="Foto fija 4">
+                    <p>Nuestra primera fiesta como novios 😍</p>
+                </div>
+                <div class="photo-card fixed-photo">
+                    <img src="assets/5.jpeg" alt="Foto fija 5">
+                    <p>Dia de halloween juntos 🤪</p>
+                </div>
+                <div class="photo-card fixed-photo">
+                    <img src="assets/6.jpeg" alt="Foto fija 6">
+                    <p>Por una vida entera juntos, dia y lugar de nacimiento de mis sentimientos por ti y ganas de tener una relacion contigo 💍</p>
+                </div>
+                <!-- Las nuevas fotos que agregues desde el celular se sumarán aquí abajo automáticamente -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

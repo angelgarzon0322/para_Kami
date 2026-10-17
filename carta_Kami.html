@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartas para Kami ✉️</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Opcional si usas el mismo CSS o dejas tus estilos abajo -->
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
+        min-height: 100vh;
+        color: #4a4a4a;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .app-container {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .letters-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .letter-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 18px;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .letter-card:active {
+      transform: scale(0.98);
+    }
+
+    .letter-icon {
+      font-size: 2.2rem;
+    }
+
+    .letter-info h3 {
+      color: #e91e63;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .letter-info p {
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    /* Estilos del Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff0f5;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      animation: popIn 0.3s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffccd5;
+      padding-bottom: 10px;
+    }
+
+    .modal-header h2 {
+      color: #e91e63;
+      font-size: 1.2rem;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #e91e63;
+      cursor: pointer;
+    }
+
+    .letter-body {
+      color: #444;
+      line-height: 1.6;
+      font-size: 1.2rem;
+      max-height: 300px;
+      overflow-y: auto;
+      font-family: 'Dancing Script', cursive;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="app-container">
+    <header class="header">
+      <a href="index.html" class="back-btn">⬅️ Volver al Inicio</a>
+      <h1>"Abre cuando..." ✉️</h1>
+    </header>
+
+    <div class="letters-grid">
+
+      <div class="letter-card" onclick="abrirCarta('Abre cuando me extrañes 💖', 'Sé que a veces nos hacemos falta, pero recuerda que siempre estoy pensando en ti y que siempre estare para ti, ire a donde estes cuando me necesites are todo lo que este a mi alcance con tal de ayudarte y hacerte feliz, siempre que me extrañes recuerda que hay estoy preparado para ir en donde estes. Cada momento a tu lado es mi regalo favorito. Te amo muchísimo.')">
+        <span class="letter-icon">💌</span>
+        <div class="letter-info">
+          <h3>Abre cuando me extrañes</h3>
+          <p>Para esos momentos en los que nos hacemos falta.</p>
+        </div>
+      </div>
+
+      <div class="letter-card" onclick="abrirCarta('Abre cuando tengas un mal día 🥺', 'Respira hondo. Recuerda que no estás sola y que eres la persona más increíble. Mañana será un día mejor y yo siempre estaré aquí para sostener tu mano nunca olvides que ante un mal dia lo mejor que puedes hacer es dejar de lado eso que te paso respirar, hacer algo que te guste y pensar en otras cosas no siempre los dias tienen que terminar con finales malos o amargos recuerda que hay mas cosas que lo pueden mejorar, y si aun no puedes mejorarlo recuerda que me tienes a mi que con algunos de mis chistes o ocurrencias puede alegrarte y si eso no es suficiente sabes que puedo estar a tu lado y brindarte un abrazo y mi tiempo.')">
+        <span class="letter-icon">🌧️</span>
+        <div class="letter-info">
+          <h3>Abre cuando tengas un mal día</h3>
+          <p>Un abrazo virtual y palabras de apoyo.</p>
+        </div>
+      </div>
+
+      <div class="letter-card" onclick="abrirCarta('Abre cuando quieras sonreír 😊', '¿Sabías que tu sonrisa es mi cosa favorita en todo el universo? Solo quería recordarte lo especial que eres y lo mucho que iluminas mi vida, no lo olvides esa sonrisa que a mi dia da luz es lo mas bello se que algo un poco cursi puede sacarte una sonrisa y si no es suficiente recuerda todas las cosas chistosas que nos han pasado y esos ataques de risa que nos dan, sabes que eso fijo te hace sonreir por algo siempre te hago reir en el dia recuerda que reir es un momento especial y mi cosa favorita aparte de tus ojos mi flaquita te amo.')">
+        <span class="letter-icon">✨</span>
+        <div class="letter-info">
+          <h3>Abre cuando quieras sonreír</h3>
+          <p>Un pequeño recordatorio para alegrar tu día.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Ventana Modal -->
+  <div id="modalCarta" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitulo">Título</h2>
+        <button class="close-btn" onclick="cerrarCarta()">&times;</button>
+      </div>
+      <div id="modalTexto" class="letter-body">
+        Contenido de la carta...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function abrirCarta(titulo, contenido) {
+      document.getElementById('modalTitulo').innerText = titulo;
+      document.getElementById('modalTexto').innerText = contenido;
+      document.getElementById('modalCarta').style.display = 'flex';
+    }
+
+    function cerrarCarta() {
+      document.getElementById('modalCarta').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalCarta');
+      if (event.target === modal) {
+        cerrarCarta();
+      }
+    }
+  </script>
+</body>
+</html>
